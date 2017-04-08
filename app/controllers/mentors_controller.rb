@@ -4,7 +4,7 @@ class MentorsController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy]
 
   def index
-    @mentors = Mentor.all
+    @mentors = Mentor.all.paginate(:page => params[:page], :per_page => 1)
   end
   def show
   end
@@ -55,7 +55,7 @@ class MentorsController < ApplicationController
     end
 
     def mentor_params
-      params.require(:mentor).permit(:name, :profession, :location, :price, :description, :industries, :expertise, :cover)
+      params.require(:mentor).permit(:name, :profession, :location, :price, :description, :industries, :expertise, :cover, :companyname)
     end
 
     def check_user
