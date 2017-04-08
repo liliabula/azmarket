@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408144238) do
+ActiveRecord::Schema.define(version: 20170408160903) do
 
   create_table "mentors", force: :cascade do |t|
     t.string   "name"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20170408144238) do
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
     t.string   "companyname"
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.string   "email_student"
+    t.string   "email_mentor"
+    t.string   "guid"
+    t.integer  "mentor_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
