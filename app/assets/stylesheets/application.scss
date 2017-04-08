@@ -1,0 +1,126 @@
+@import "materialize";
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+.content-show{
+  margin-top: 5%;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+
+
+.btn-devise {
+	width: 100%;
+  color: white;
+}
+
+.btn-user {
+  width: 100%;
+  color: white;
+}
+
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  h1 {
+  	font-size: 3em;
+  }
+
+  h3{
+    color: rgba(0, 0, 0, .87);
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+ .img-circular{
+ width: 200px;
+ height: 200px;
+ background-size: cover;
+ display: block;
+ border-radius: 100px;
+ -webkit-border-radius: 100px;
+ -moz-border-radius: 100px;
+}
+
+.show-img{
+    margin: 0 auto;
+
+}
+
+.btn-form{
+	width: 100%;
+}
+
+.profile-border{
+  border:1px solid rgb(237, 239, 237);
+  padding: 5%;
+}
+.profile-header{
+  border:1px solid rgb(237, 239, 237);
+  background-color: #edefed;
+}
+.summary-positioning{
+  padding: 5%;
+}
+
+.dashboard-tab{
+  color: rgb(0, 150, 136);
+}
+.divider-normal{
+  background: 0 0!important;
+    border-top: 1px solid #CCC!important;
+    margin-bottom: -36px!important;
+    height: 44px!important;
+    border: 0;
+}

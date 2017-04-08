@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Azmarket</title>
+  <title>MentorBar</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
 
-<%= yield %>
+	<%= render "layouts/header" %>
+	<%= render 'pages/slider' if action_name == 'home' %>
 
+	<main class="container">
+		<div class="container">
+		<% flash.each do |type, message| %>
+		<script>
+			Materialize.toast('<%= message %>', 4000)
+		</script>
+		<% end %>	
+		</div>
+		<%= yield %>
+	</main>
+	<%= render "layouts/footer" %>
 </body>
+	<script>
+	 	$(".button-collapse").sideNav();	
+	</script>
+
+	<script>
+		$(document).ready(function(){
+		$('ul.tabs').tabs();
+		});
+	</script>
+
 </html>
