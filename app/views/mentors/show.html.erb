@@ -1,39 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div class="content-show">
+  <div class="row">
+    <div class="col s12 l4">
+      <%= image_tag @mentor.cover.url(:medium), class: "img-circular show-img"%>
+      <br>
+      <div class="profile-header">
+          <p class="summary-positioning"> Summary</p>
+      </div>
+      <div class="profile-border">
+        <p class="light">
+          <strong>Price:</strong>
+          <%= number_to_currency(@mentor.price) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @mentor.name %>
-</p>
+        <span> <%= link_to 'Book a Call', mentors_path, class: "btn btn-devise"%></span>
+        <br>
+        <br>
+        <% if @mentor.user == current_user %>
+          <span> <%= link_to 'Edit Profile', edit_mentor_path(@mentor), class: "btn btn-devise grey lighten-2" %></span>
+        <% end %>
+        <br>
+        <br>
+      </div>
 
-<p>
-  <strong>Profession:</strong>
-  <%= @mentor.profession %>
-</p>
+    </div>
+    <div class="col l8">
+      <h3 class="light">Hey, I'm <%= @mentor.name %></h3>
+      <p><strong><i class="material-icons">work</i> <%= @mentor.profession %></strong> 
 
-<p>
-  <strong>Location:</strong>
-  <%= @mentor.location %>
-</p>
+      <strong><i class="material-icons">location_on</i></strong>
+        <%= @mentor.location %></p>
+      <p class="light"><%= @mentor.description %></p>
+      <br>
+      <p class="light">
+      <strong>Industries:</strong>
+      <%= @mentor.industries %>
+      </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @mentor.price %>
-</p>
+      <p class="light">
+      <strong>Expertise:</strong>
+      <%= @mentor.expertise %>
+      </p>
+      <hr class="divider-normal">
+      <h5> Customer Reviews</h5>
+      
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @mentor.description %>
-</p>
+   <!-- <%= link_to 'Back', mentors_path %> -->
 
-<p>
-  <strong>Industries:</strong>
-  <%= @mentor.industries %>
-</p>
-
-<p>
-  <strong>Expertise:</strong>
-  <%= @mentor.expertise %>
-</p>
-
-<%= link_to 'Edit', edit_mentor_path(@mentor) %> |
-<%= link_to 'Back', mentors_path %>
+  </div>
+</div>

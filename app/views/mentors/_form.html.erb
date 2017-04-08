@@ -1,4 +1,4 @@
-<%= form_for(@mentor) do |f| %>
+<%= form_for @mentor, html: { multipart: true } do |f| %>
   <% if @mentor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mentor.errors.count, "error") %> prohibited this mentor from being saved:</h2>
@@ -24,22 +24,29 @@
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
+    <%= f.label :Price_min_50_cent %><br>
     <%= f.text_field :price %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: "materialize-textarea"%>
   </div>
   <div class="field">
     <%= f.label :industries %><br>
-    <%= f.text_area :industries %>
+    <%= f.text_area :industries, class: "materialize-textarea" %>
   </div>
   <div class="field">
     <%= f.label :expertise %><br>
-    <%= f.text_area :expertise %>
+    <%= f.text_area :expertise, class: "materialize-textarea" %>
   </div>
+  <div class="field">
+    <label class="grey-text">Upload profile image </label>
+    <%= f.file_field :cover %>
+  </div>
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Become a Mentor', class: "btn btn-form"%>
+    <br>
   </div>
+  <br>
 <% end %>

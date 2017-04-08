@@ -2,6 +2,9 @@
   <div class="row">
   <% @mentors.each do |mentor| %>
   <div class="col s12 m12">
+  <div class="col s4 waves-effect waves-block waves-light ">
+  <%= image_tag mentor.cover.url(:medium), class: "img-circular activator" %>
+  </div>
   <div class="col s6">
 
   <div>
@@ -42,6 +45,5 @@
 
    <%= link_to 'New Mentor', new_mentor_path %>
   <br>
+
 </div>
-
-
